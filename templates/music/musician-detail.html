@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{#{% block quote %}#}
+{#{% endblock %}#}
+
+{% block author %}
+    {{ 'Mick Jagger' }}
+{% endblock %}
+
+{% block quote %}
+    {{ "It's only rock 'n' roll, but I like it, like it, Yes, I do!" }}
+{% endblock %}
+
+{% block content%}
+    {{ musician }}
+    <p></p>
+    <p>
+        <a href="{% url 'musician-update' musician.pk %}">Update musician</a> <br>
+        <a href="{% url 'musician-delete' musician.pk %}">Delete musician</a>
+    </p>
+{% endblock %}
+
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#</head>#}
+{#<body>#}
+{#    <p>index.html</p>#}
+{#    <h1>{{ john }}</h1>#}
+{#</body>#}
+{#</html>#}

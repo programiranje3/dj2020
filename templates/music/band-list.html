@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{#{% block quote %}#}
+{#{% endblock %}#}
+
+{% block author %}
+    {{ 'Mick Jagger' }}
+{% endblock %}
+
+{% block quote %}
+    {{ "It's only rock 'n' roll, but I like it, like it, Yes, I do!" }}
+{% endblock %}
+
+{% block content%}
+    {% if band_list %}
+        <p>The bands currently registered in the database ({{ band_list.count }}):</p>
+        {% for band in band_list %}
+            <li><a href="{% url 'band-detail' band.pk %}">{{ band.name }}</a></li>
+        {% endfor %}
+    {% else %}
+        <p>No band is currently registered in the database.</p>
+    {% endif %}
+    <br>
+    <p><a href="{% url 'band-create' %}">Add band</a></p>
+{% endblock %}
+
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#</head>#}
+{#<body>#}
+{#    <p>index.html</p>#}
+{#    <h1>{{ john }}</h1>#}
+{#</body>#}
+{#</html>#}

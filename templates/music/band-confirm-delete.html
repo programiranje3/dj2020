@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{#{% block quote %}#}
+{#{% endblock %}#}
+
+{% block author %}
+    {{ 'Mick Jagger' }}
+{% endblock %}
+
+{% block quote %}
+    {{ "It's only rock 'n' roll, but I like it, like it, Yes, I do!" }}
+{% endblock %}
+
+{% block content%}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Yes, delete">
+        &nbsp; &nbsp;
+        <a href="{% url 'band-detail' band.pk %}">No, keep it</a>
+    </form>
+    <br>
+{% endblock %}
+
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#</head>#}
+{#<body>#}
+{#    <p>index.html</p>#}
+{#    <h1>{{ john }}</h1>#}
+{#</body>#}
+{#</html>#}
